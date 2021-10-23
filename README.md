@@ -1,19 +1,25 @@
-# Lumen PHP Framework
+# Servidor del desafío de tareas
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Para este proyecto utilizamos lumen en el lado del servidor y react en el lado del cliente
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Pasos a seguir para la instalacion 
 
-## Official Documentation
+1)	Para iniciar la instalacion, vamos a crear un archivo llamado .env 
+	este archivo nos ayudara con la conexion a la base de datos (hey un ejemplo llamado .env.example)
+	dentro de el colocars tus datos de acceso al servidor de la BD, nombre de la tabla,
+	nombre de usuario, y contaseña
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+2	abrir una consola y ejecutar el comando: composer install , 
+	esto instala archivos necesarios para la ejecucion del proyecto
 
-## Contributing
+2)	luego ejecutar el comando: php artisan migrate:refresh
+	para que se creen las tablas en la bases de datos
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3) 	Ejecuta el comando: php artisan jwt:secret y luego: php artisan cache:clear
+	esto es para crear la clave secreta del JWT y limpiamos cahce
+
+4)	ejecuta el comando para correr el proyecto de lumen: php -S localhost:8000 -t public
+	y ya el proyecto deberia estar andando sin problemas
 
 ## Security Vulnerabilities
 
